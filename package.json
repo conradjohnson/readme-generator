@@ -1,0 +1,26 @@
+{
+  "name": "m9-challenge",
+  "version": "1.0.0",
+  "description": "Module 9 Challenge - README.md generation tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conradjohnson/readme-generator.git"
+  },
+  "keywords": [
+    "readme",
+    "generator"
+  ],
+  "author": "James Johnson",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/conradjohnson/readme-generator/issues"
+  },
+  "homepage": "https://github.com/conradjohnson/readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
