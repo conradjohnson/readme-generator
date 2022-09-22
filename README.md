@@ -53,9 +53,6 @@ After running, check to see if README.md is overwritten in /readme directory aft
 
 [conradjohnson](https://github.com/conradjohnson)
 
-[fd](https://github.com/fd)
-
-[superphly](https://github.com/superphly)
 
  ## License
  ***
@@ -73,7 +70,7 @@ After running, check to see if README.md is overwritten in /readme directory aft
 
 # Questions
 ***
-For questions or assistance, please contact through [GitHub Account](https://github.com/conradjohnson) or email: [james@someemaildomain.com](mailto:james@someemaildomain.com)
+For questions or assistance, please contact through [GitHub Account](https://github.com/conradjohnson).
 
 
  [Back to top](#description)
