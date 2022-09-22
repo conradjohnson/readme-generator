@@ -1,8 +1,9 @@
+//uses moment to generate year string for license copyright
 const moment = require('moment');
 
 // A function that returns a license badge based on which license is passed in
 function renderLicenseBadge(type) {
-  // ex: [![Generic badge](https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg)](https://shields.io/)
+  // Badge format ex: [![Generic badge](https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg)](https://shields.io/)
   let badgeString = "";
   switch(type){
     case 'MIT': 
@@ -38,14 +39,19 @@ function renderLicenseSection(type, userName) {
 
   let year = moment().format('YYYY');
   let licenseContent = '';
+  //render the badge for our license string
   let licenseBadge = renderLicenseBadge(type);
+
+  //based on license type, populate license content string with the proper license content.
   switch(type){
       case 'MIT':
           licenseContent = `
 ${licenseBadge}
 
   MIT License
+
   [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)
+  
   Copyright (c) ${year} ${userName}
   
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -72,6 +78,7 @@ ${licenseBadge}
 
   GNU AFFERO GENERAL PUBLIC LICENSE
   Version 3, 19 November 2007
+
   [https://www.gnu.org/licenses/agpl-3.0.en.html](https://www.gnu.org/licenses/agpl-3.0.en.html)
   
   Copyright (c) ${year} ${userName}
@@ -83,6 +90,7 @@ ${licenseBadge}
 
   GNU GENERAL PUBLIC LICENSE
   Version 3, 29 June 2007
+
   [https://www.gnu.org/licenses/gpl-3.0.en.html](https://www.gnu.org/licenses/gpl-3.0.en.html)
   
   Copyright (c) ${year} ${userName}
@@ -94,6 +102,7 @@ ${licenseBadge}
 
   Mozilla Public License Version 2.0
   ==================================
+
   [http://mozilla.org/MPL/2.0/](http://mozilla.org/MPL/2.0/)
   
   
@@ -106,6 +115,7 @@ ${licenseBadge}
 
   Apache License
   Version 2.0, January 2004
+
   [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
   
   Copyright (c) ${year} ${userName}
@@ -118,6 +128,7 @@ ${licenseBadge}
 ${licenseBadge}
 
   ISC License
+
   [https://opensource.org/licenses/ISC](https://opensource.org/licenses/ISC)
   
   Permission to use, copy, modify, and/or distribute this software for any
@@ -140,6 +151,7 @@ ${licenseBadge}
 ${licenseBadge}
 
   [https://unlicense.org/](https://unlicense.org/)
+
   This is free and unencumbered software released into the public domain.
   
   Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -179,27 +191,43 @@ ${licenseBadge}
 // A function to generate markdown for README
 const generateMarkdown = function(data) {
   let readMeString = "";
-  //flags for optional sections in readme.
-  let includeContributors = (toString(data.contributors).trim().length>0);
-  let includeInstallInstructions = (toString(data.installInstr).trim().length>0);
-  let includeUsageInstructions = (toString(data.usageInst).trim().length>0);
-  let includeTestingInstructions = (toString(data.testInst).trim().length>0);
+  let contributors = data.contributors.split(',');
+  
+  //string values for include flags
+  let installInst = data.installInst;
+  installInst = installInst.trim();
+  let testInst = data.testInst;
+  testInst = testInst.trim();
+  let usageInst = data.usageInst;
+  usageInst = usageInst.trim();
 
-    //==================================================
+  //flags for optional sections in readme.
+  let includeInstallInstructions = (installInst.length>0);
+  let includeUsageInstructions = (usageInst.length>0);
+  let includeTestingInstructions = (testInst.length>0);
+
+ //==================================================
  //lets build the README.md file string!
  //==================================================
 
  readMeString = `
+ [![Github All Releases](https://img.shields.io/github/downloads/${data.gitUser}/${data.repoName}/total.svg)]()
+ [![GitHub version](https://badge.fury.io/gh/${data.gitUser}%2F${data.repoName}.svg)](https://github.com/Naereen/${data.repoName})
+
+
 # ${data.projTitle}
 
 ## Description
 
 ${data.projDesc}
 
+
+
 ## Table of Contents
 
 `;
- // optional sections for table of contents
+
+// optional sections for table of contents
  if (includeInstallInstructions){
      readMeString += `- [Installation](#installation)
 `;
@@ -212,15 +240,20 @@ ${data.projDesc}
      readMeString += `- [Testing](#testing)
 `;
  }
-// continuing to build
+
+ // continuing to build ToC
 readMeString += `- [Credits](#credits)
 - [License](#license)
 - [Questions](#questions)
 
+
+
 `;
- // optional sections
+
+// optional sections
  if (includeInstallInstructions){
      readMeString += `## Installation
+***
 
 ${data.installInst}
 
@@ -228,6 +261,7 @@ ${data.installInst}
  }
  if (includeUsageInstructions){
      readMeString += `## Usage
+***
 
 ${data.usageInst}
 
@@ -235,30 +269,53 @@ ${data.usageInst}
  }
  if (includeTestingInstructions){
      readMeString += `## Testing
+***
 
 ${data.testInst}
 
 `;
  }
+
+ // credits section
  readMeString +=`## Credits
+ ***
 
 [${data.gitUser}](https://github.com/${data.gitUser})
-and ${data.contributors};
+`;
 
-`; 
- readMeString += `## License
+//list any additional contributors other than the main dev
+// links to their github profile
+for (let i=0; i<contributors.length; i++) {
+  readMeString += `
+[${contributors[i].trim()}](https://github.com/${contributors[i].trim()})
+`;
+}
 
+// license section
+ readMeString += `
+ ## License
+ ***
 `;  
  readMeString += renderLicenseSection(data.license, data.userFirstLast);
+
+ // Questions section
  readMeString +=`
+
 # Questions
+***
 `;
  readMeString += `For questions or assistance, please contact through [GitHub Account](https://github.com/${data.gitUser}) or email: [${data.email}](mailto:${data.email})
 
 `
+// last anchor link to get back to top
  readMeString += `
-[Back to top](#${data.projTitle})`;
+ [Back to top](#description)`;
+//==================================================
+// DONE building the README.md file string!
+//==================================================
 
+
+// return the generated complete readme file string
 return readMeString;  
 
 

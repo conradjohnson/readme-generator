@@ -6,7 +6,7 @@ const { generateMarkdown } = require('./utils/generateMarkdown');
 
 
 
-// An array of questions for user input
+// An array of questions for user input to pass to inquirer object
 const questions = [
     {
         type: 'input',
@@ -50,7 +50,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Contributors (leave blank if solo contributor): ',
+        message: `Contributors Git Usernames (separate by comma: , ): `,
         name: 'contributors',
     }, 
     {
@@ -80,21 +80,28 @@ const questions = [
 
 // a function to write README file
 function writeToFile(fileName, data) {
+    
+    // generate the readme file string
     let readMeString = generateMarkdown(data);
+
+    // set the directory to store files
     let fileDir = 'readme/';
+
+    // set the filename string with directory prepended
     fileName = fileDir + fileName;
+
     // first clear out the old file
-    fs.writeFile(fileName, '', function(){console.log('done')})
+    fs.writeFile(fileName, '', ()=>{})
     
     //now let's write the new file
     fs.appendFile(fileName, readMeString, (err) =>
-    // Ternary operator to log an error or success.
-    err ? console.error(err) : console.log('Your README.md is ready in /readme directory!')
-);
+     // Ternary operator to log an error or success.
+    err ? console.error(err) : console.log('\x0A\x0AYour README.md is ready in /readme directory!\x0A\x0A')
+    );
 
 }
 
-// // TODO: Create a function to initialize app
+// A function to initialize app 
 function init() {
     let greetString = `\x0AREADME.md generator\x0A===================\x0A\x0AWill auto-generate a README.md in 'readme' directory`;
     console.log(greetString);
@@ -106,7 +113,7 @@ function init() {
 
 }
 
-// // Function call to initialize app
+// Function call to initialize app
 init();
 
 

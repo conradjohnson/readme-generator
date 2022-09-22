@@ -1,9 +1,15 @@
 
-# f
+ [![Github All Releases](https://img.shields.io/github/downloads/conradjohnson/readme-generator/total.svg)]()
+ [![GitHub version](https://badge.fury.io/gh/conradjohnson%2Freadme-generator.svg)](https://github.com/Naereen/readme-generator)
+
+
+# README.md Generator
 
 ## Description
 
-dfd
+Readme Generator is a local tool to auto-generate a README.md file.  It will prompt the user with a series of fixed questions.  Based on those answers the tool will auto generate a README for the users’ projects.  The users README.md will be available in the /readme directory
+
+
 
 ## Table of Contents
 
@@ -14,51 +20,48 @@ dfd
 - [License](#license)
 - [Questions](#questions)
 
-## Installation
 
-f
+
+## Installation
+***
+
+git clone project in local directory.  Index.js file will be available in the readme-challenge project directory.
 
 ## Usage
+***
 
-df
+Fill out the prompts with the correct information.  Will overwrite current README.md in ‘README’ directory.  Separate contributors GitHub profile names with a comma ‘ , ’.    Sections that are optional are: Installation Instructions, Usage Instructions and Testing Instructions.
 
 ## Testing
+***
 
-d
+After running, check to see if README.md is overwritten in /readme directory after running.
 
 ## Credits
+ ***
+
+[conradjohnson](https://github.com/conradjohnson)
 
 [fd](https://github.com/fd)
-and df;
 
-## License
+[superphly](https://github.com/superphly)
 
+ ## License
+ ***
 
-[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![GNU GPL License](https://img.shields.io/badge/license-GNUGPL-green.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-  MIT License
-  [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)
-  Copyright (c) 2022 f
+  GNU GENERAL PUBLIC LICENSE
+  Version 3, 29 June 2007
+
+  [https://www.gnu.org/licenses/gpl-3.0.en.html](https://www.gnu.org/licenses/gpl-3.0.en.html)
   
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to deal
-  in the Software without restriction, including without limitation the rights
-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-  copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-  
-  The above copyright notice and this permission notice shall be included in all
-  copies or substantial portions of the Software.
-  
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-  SOFTWARE.
+  Copyright (c) 2022 James Johnson
+          
+
 # Questions
-For questions or assistance, please contact through [GitHub Account](https://github.com/fd) or email: [fd](mailto:fd)
+***
+For questions or assistance, please contact through [GitHub Account](https://github.com/conradjohnson) or email: [james@jamesemail.com](mailto:james@jamesemail.com)
 
 
-[Back to top](#f)
+ [Back to top](#description)
