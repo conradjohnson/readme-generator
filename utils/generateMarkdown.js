@@ -212,7 +212,7 @@ const generateMarkdown = function(data) {
 
  readMeString = `
  [![Github All Releases](https://img.shields.io/github/downloads/${data.gitUser}/${data.repoName}/total.svg)]()
- [![GitHub version](https://badge.fury.io/gh/${data.gitUser}%2F${data.repoName}.svg)](https://github.com/Naereen/${data.repoName})
+ [![GitHub version](https://badge.fury.io/gh/${data.gitUser}%2F${data.repoName}.svg)](https://github.com/${data.gitUser}/${data.repoName})
 
 
 # ${data.projTitle}

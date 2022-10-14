@@ -1,13 +1,13 @@
 
- [![Github All Releases](https://img.shields.io/github/downloads/conradjohnson/readme-generator/total.svg)]()
- [![GitHub version](https://badge.fury.io/gh/conradjohnson%2Freadme-generator.svg)](https://github.com/Naereen/readme-generator)
+ [![Github All Releases](https://img.shields.io/github/downloads/conradjohnson/notes-taker-m11/total.svg)]()
+ [![GitHub version](https://badge.fury.io/gh/conradjohnson%2Fnotes-taker-m11.svg)](https://github.com/Naereen/notes-taker-m11)
 
 
-# README Generator
+# Notes Taking Application
 
 ## Description
 
-Readme Generator is a local tool to auto-generate a README.md file.  It will prompt the user with a series of fixed questions.  Based on those answers the tool will auto generate a README for the users’ projects.  The users README.md will be available in the /readme directory.
+Notes taking webapp that allows users to store, retrieve and delete notes on a publicly accessible site.  Uses Express.js API calls from javascript front end to modify a json data store file.  Contains bonus delete function.   
 
 
 
@@ -15,7 +15,6 @@ Readme Generator is a local tool to auto-generate a README.md file.  It will pro
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Testing](#testing)
 - [Credits](#credits)
 - [License](#license)
 - [Questions](#questions)
@@ -25,44 +24,47 @@ Readme Generator is a local tool to auto-generate a README.md file.  It will pro
 ## Installation
 ***
 
-git clone project in local directory.  Index.js file will be available in the readme-challenge project directory.
+clone repository to local machine.  
 
 ## Usage
 ***
 
-Fill out the prompts with the correct information.  Will overwrite current README.md in ‘README’ directory.  Separate contributors GitHub profile names with a comma ‘ , ’.    Sections that are optional are: Installation Instructions, Usage Instructions, Additional Contributors and Testing Instructions.
-
-## Testing
-***
-
-After running, check to see if README.md is overwritten in /readme directory after running. 
+to run, 'node server.js'.  Open browser to http://localhost:3001 or go to demo. 
 
 ## Credits
  ***
 
 [conradjohnson](https://github.com/conradjohnson)
 
-[fd](https://github.com/fd)
-
-[superphly](https://github.com/superphly)
+[](https://github.com/)
 
  ## License
  ***
 
-  [![Mozilla License](https://img.shields.io/badge/license-Mozilla-green.svg)](http://mozilla.org/MPL/2.0/)
+[![ISC License](https://img.shields.io/badge/license-ISC-green.svg)](https://opensource.org/licenses/ISC)
 
-  Mozilla Public License Version 2.0
-  ==================================
+  ISC License
 
-  [http://mozilla.org/MPL/2.0/](http://mozilla.org/MPL/2.0/)
+  [https://opensource.org/licenses/ISC](https://opensource.org/licenses/ISC)
   
+  Permission to use, copy, modify, and/or distribute this software for any
+  purpose with or without fee is hereby granted, provided that the above
+  copyright notice and this permission notice appear in all copies.
+  
+  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+  REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+  AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+  INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+  LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+  OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  PERFORMANCE OF THIS SOFTWARE.
   
   Copyright (c) 2022 James Johnson
           
 
 # Questions
 ***
-For questions or assistance, please contact through [GitHub Account](https://github.com/conradjohnson) or email: [james@someemaildomain.com](mailto:james@someemaildomain.com)
+For questions or assistance, please contact through [GitHub Account](https://github.com/conradjohnson) or email: [notmyemail@gmail.com](mailto:notmyemail@gmail.com)
 
 
  [Back to top](#description)
